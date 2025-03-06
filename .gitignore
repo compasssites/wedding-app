@@ -2,7 +2,6 @@
 node_modules/
 
 # Ignore all dotenv files by default to prevent accidentally committing any secrets.
-# To include specific dotenv files, use the `!` operator or adjust these rules.
 .env
 .env.*
 
@@ -10,5 +9,9 @@ node_modules/
 !.env.example
 !.env.*.example
 
-# Allow the build directory (or just the Dockerfile) for deployment
-!.wasp/build/
+# Allow specific build files for deployment
+!.wasp/build/Dockerfile
+!.wasp/build/server/
+
+# Exclude node_modules inside server/ just in case
+.wasp/build/server/node_modules/
