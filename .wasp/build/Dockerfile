@@ -32,8 +32,8 @@ WORKDIR /app
 COPY src ./src
 COPY package.json .
 COPY package-lock.json .
-COPY .wasp/build/server .wasp/build/server
-COPY .wasp/out/sdk .wasp/out/sdk
+COPY server .wasp/build/server
+COPY sdk .wasp/out/sdk
 # Install npm packages, resulting in node_modules/.
 RUN npm install && cd .wasp/build/server && npm install
 COPY db/schema.prisma .wasp/build/db/
