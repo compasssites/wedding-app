@@ -1,4 +1,4 @@
 {
   "schemaVersion": 2,
-  "dockerfilePath": ".wasp/build/Dockerfile"
+  "imageName": "ghcr.io/compasssites/wedding-app:main"
 }
