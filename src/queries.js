@@ -27,7 +27,7 @@ export const getUserData = async (args, context) => {
   }
 
   const data = await response.json();
-  console.log('NocoDB response:', JSON.stringify(data, null, 2)); // Debug full response
+  //console.log('NocoDB response:', JSON.stringify(data, null, 2)); // Debug full response
 
   if (!data.list || !Array.isArray(data.list)) {
     throw new HttpError(500, 'Invalid NocoDB response: list is missing or not an array');
@@ -36,7 +36,7 @@ export const getUserData = async (args, context) => {
   const userData = data.list.find(item => {
     const itemUsername = item.username?.toLowerCase().trim();
     const userUsername = username?.toLowerCase().trim();
-    console.log(`Comparing: item.username=${itemUsername}, user.username=${userUsername}`);
+    //console.log(`Comparing: item.username=${itemUsername}, user.username=${userUsername}`);
     return itemUsername === userUsername;
   });
 
@@ -45,6 +45,6 @@ export const getUserData = async (args, context) => {
     throw new HttpError(404, 'User data not found');
   }
 
-  console.log('Found user data:', userData);
+  //console.log('Found user data:', userData);
   return userData;
 };
