@@ -58,7 +58,7 @@ COPY --from=server-builder /app/node_modules ./node_modules
 COPY --from=server-builder /app/.wasp/build/server/node_modules .wasp/build/server/node_modules
 COPY --from=server-builder /app/.wasp/build/server/bundle .wasp/build/server/bundle
 COPY --from=server-builder /app/.wasp/build/server/package*.json .wasp/build/server/
-COPY db/ .wasp/build/db/
+COPY .wasp/build/db/ .wasp/build/db/
 EXPOSE ${PORT}
 WORKDIR /app/.wasp/build/server
 ENTRYPOINT ["npm", "run", "start-production"]
